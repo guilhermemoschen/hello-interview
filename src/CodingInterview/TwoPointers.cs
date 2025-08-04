@@ -1,4 +1,7 @@
-﻿namespace CodingInterview;
+﻿using System;
+using System.Linq;
+
+namespace CodingInterview;
 
 public static class TwoPointers
 {
@@ -26,5 +29,22 @@ public static class TwoPointers
         }
 
         return false;
+    }
+
+    public static int[] MoveZeroes(int[] numbers)
+    {
+        var nextNonZero = 0;
+        for (var i = 0; i < numbers.Length; i += 1)
+        {
+            if (numbers[i] == 0)
+            {
+                continue;
+            }
+
+            (numbers[nextNonZero], numbers[i]) = (numbers[i], numbers[nextNonZero]);
+            nextNonZero++;
+        }
+
+        return numbers;
     }
 }
