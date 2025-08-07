@@ -26,6 +26,9 @@ dotnet_diagnostic.SA1402.severity = none
 # SA1600: Elements should be documented
 dotnet_diagnostic.SA1600.severity = none
 
+# SA1615: Element return value should be documented
+dotnet_diagnostic.SA1615.severity = none
+
 # SA1633: File should have header
 dotnet_diagnostic.SA1633.severity = none
 

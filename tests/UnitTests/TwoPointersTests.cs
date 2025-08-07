@@ -54,4 +54,48 @@ public class TwoPointersTests
         // Assert
         result.ShouldBeEquivalentTo(expected);
     }
+
+    public static readonly TheoryData<int[], int[]> SortColorsCases = new()
+    {
+        {
+            [2, 1, 2, 0, 1, 0, 1, 0, 1],
+            [0, 0, 0, 1, 1, 1, 1, 2, 2]
+        },
+    };
+
+    [Theory]
+    [MemberData(nameof(SortColorsCases))]
+    public void SortColors(int[] numbers, int[] expected)
+    {
+        // Arrange
+        // Act
+        var result = TwoPointers.SortColors(numbers);
+
+        // Assert
+        result.ShouldBeEquivalentTo(expected);
+    }
+
+    public static readonly TheoryData<int[], int> ContainerWithMostWaterCases = new()
+    {
+        {
+            [3, 4, 1, 2, 2, 4, 1, 3, 2],
+            21
+        },
+        {
+            [1, 2, 1],
+            2
+        },
+    };
+
+    [Theory]
+    [MemberData(nameof(ContainerWithMostWaterCases))]
+    public void ContainerWithMostWater(int[] lines, int expected)
+    {
+        // Arrange
+        // Act
+        var result = TwoPointers.ContainerWithMostWater(lines);
+
+        // Assert
+        result.ShouldBe(expected);
+    }
 }
